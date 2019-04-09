@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="splashLogoWidth">190dp</dimen>
+    <dimen name="splashLogoHeight" type="dimen" format="float">86.3dp</dimen>
+    <dimen name="loginLogoWidth" type="dimen" format="float">140.7dp</dimen>
+    <dimen name="loginLogoHeight" type="dimen" format="float">64.3dp</dimen>
+    <dimen name="loginLogoMarginTop" type="dimen" format="float">64.7dp</dimen>
+    <dimen name="loginTextSize" type="dimen" format="float">26.3sp</dimen>
+</resources>

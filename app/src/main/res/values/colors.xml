@@ -7,5 +7,7 @@
     <color name="loginText">#283342</color>
     <color name="buttonColor">#ff5c5c</color>
     <color name="loginTextColor">#fffefe</color>
+    <color name="hintColor">#9a9a9a</color>
+    <color name="editTextLineColor">#9a9a9a</color>
 
 </resources>

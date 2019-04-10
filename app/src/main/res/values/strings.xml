@@ -1,6 +1,17 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Klickfie</string>
     <string name="login">Login</string>
     <string name="with_your_phone_number">with your Phone Number</string>
     <string name="phone_number">Phone Number</string>
+    <string name="not_registered_yet">Not Registered Yet?</string>
+    <string name="name">Name<sup>*</sup></string>
+    <string name="email">Email<sup>*</sup></string>
+    <string name="phone_number_sub">Phone Number<sup>*</sup></string>
+    <string name="by_proceeding_you_agree_to_our_terms_and_conditions">By proceeding, you agree to our Terms and Conditions</string>
+    <string name="signup">SIGNUP</string>
+    <string name="emailRegex" tools:ignore="TypographyDashes">^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</string>
+
+    <string-array name="array_name">
+        <item>+91</item>
+    </string-array>
 </resources>

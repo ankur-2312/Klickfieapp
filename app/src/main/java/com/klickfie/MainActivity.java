@@ -2,8 +2,11 @@ package com.klickfie;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.klickfie.utilities.Constants;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +26,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentLogin);
                 finish();
             }
-        },1000);
+        }, Constants.SPLASH_TIME);
     }
 }

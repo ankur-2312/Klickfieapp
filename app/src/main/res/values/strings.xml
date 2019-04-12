@@ -10,6 +10,16 @@
     <string name="by_proceeding_you_agree_to_our_terms_and_conditions">By proceeding, you agree to our Terms and Conditions</string>
     <string name="signup">SIGNUP</string>
     <string name="emailRegex" tools:ignore="TypographyDashes">^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</string>
+    <string name="verify_phone_number">Verify Phone Number</string>
+    <string name="we_have_sent_you_an_access_code_via_sms_for_phone_number_verification">We have sent you an access code via SMS for Phone Number Verification</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="verify">Verify</string>
+    <string name="notregistered">Not Registered Yet? SignUp First</string>
+    <string name="alreadyregistered">No is Already Registered</string>
+    <string name="terms_conditions">By proceeding, you agree to our Terms and Conditions</string>
+    <string name="work_in_progress">Work In Progress</string>
+    <string name="min_10_digits">Min 10 Digits are allowed</string>
+    <string name="email_error">Enter Valid Email</string>
 
     <string-array name="array_name">
         <item>+91</item>

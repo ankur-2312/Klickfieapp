@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ivLogo"
-            android:layout_marginStart="25dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/login"
@@ -134,15 +134,15 @@
             android:layout_alignParentEnd="true">
 
 
-            <ImageView
+            <!--<ImageView-->
 
 
-                android:id="@+id/ivSwipeCurve"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                <!--android:id="@+id/ivSwipeCurve"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
 
-                android:src="@drawable/ic_login_swipe_curve"
-                tools:ignore="ContentDescription" />
+                <!--android:src="@drawable/ic_login_swipe_curve"-->
+                <!--tools:ignore="ContentDescription" />-->
 
             <!--<ImageView-->
 

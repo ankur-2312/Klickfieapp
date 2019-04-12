@@ -11,34 +11,40 @@ import android.text.TextPaint;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
+import com.klickfie.utilities.*;
+import com.klickfie.utilities.LoginPojo;
 import java.util.Objects;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, TextWatcher {
+
 
     private Button butLogin;
     private TextInputEditText etPhoneNo;
     private TextView tvNotRegistered;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-               WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initViews();
         spannableString();
     }
 
-    private void initViews(){
-        butLogin=findViewById(R.id.butLogin);
-        etPhoneNo=findViewById(R.id.etPhoneNo);
-        tvNotRegistered=findViewById(R.id.tvNotRegistered);
+    private void initViews() {
+        butLogin = findViewById(R.id.butLogin);
+        etPhoneNo = findViewById(R.id.etPhoneNo);
+        tvNotRegistered = findViewById(R.id.tvNotRegistered);
         butLogin.setOnClickListener(this);
         etPhoneNo.addTextChangedListener(this);
 
@@ -48,7 +54,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
 
+        Call<LoginPojo> call = ApiInstance.getInstance().getApi().login(Constants.NORMAL_LOGIN, Constants.SOCIAL_TYPE, Constants.COUNTRY_CODE, Objects.requireNonNull(etPhoneNo.getText()).toString(), Constants.DEVICE_TYPE);
+        call.enqueue(new Callback<LoginPojo>() {
+            @Override
+            public void onResponse(Call<LoginPojo> call, Response<LoginPojo> response) {
 
+                assert response.body() != null;
+                Log.i(Constants.Tag,""+response.body().getCODE());
+                if (response.body().getCODE() == Constants.LOGIN_SUCCESS) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString(Constants.PHONE_NO_KEY, etPhoneNo.getText().toString());
+                    OTPFragment otpFragment = new OTPFragment();
+                    otpFragment.setArguments(bundle);
+                    otpFragment.show(getSupportFragmentManager(), otpFragment.getTag());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginPojo> call, Throwable t) {
+
+                Log.i(Constants.Tag, "" + t);
+
+            }
+        });
     }
 
     @Override
@@ -59,14 +87,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-        String phoneNo= Objects.requireNonNull(etPhoneNo.getText()).toString();
-        if(phoneNo.length()<10){
+        String phoneNo = Objects.requireNonNull(etPhoneNo.getText()).toString();
+        if (phoneNo.length() < 10) {
             butLogin.setEnabled(false);
             butLogin.setTextColor(getResources().getColor(R.color.buttonColor));
             butLogin.setBackgroundResource(R.drawable.rounded_button_disable);
-        }
-        else
-        {
+        } else {
             butLogin.setEnabled(true);
             butLogin.setTextColor(getResources().getColor(R.color.white));
             butLogin.setBackgroundResource(R.drawable.rounded_button);
@@ -79,27 +105,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void spannableString(){
-        String str="Not Registered Yet? SignUp First";
+    private void spannableString() {
+        String str = getString(R.string.notregistered);
 
-        SpannableString spannableString=new SpannableString(str);
+        SpannableString spannableString = new SpannableString(str);
 
-        ClickableSpan clickableSpan=new ClickableSpan() {
+        ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
-            public void onClick( View widget) {
-                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+            public void onClick(View widget) {
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
             }
 
             @Override
-            public void updateDrawState( TextPaint ds) {
+            public void updateDrawState(TextPaint ds) {
                 super.updateDrawState(ds);
                 ds.setColor(getResources().getColor(R.color.buttonColor));
                 ds.setUnderlineText(false);
-                //ds.bgColor=0;
-                ds.baselineShift=0;
+                ds.baselineShift = 0;
             }
         };
-        spannableString.setSpan(clickableSpan,20,32, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        spannableString.setSpan(clickableSpan, 20, 32, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvNotRegistered.setText(spannableString);
         tvNotRegistered.setMovementMethod(LinkMovementMethod.getInstance());
     }

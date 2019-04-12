@@ -9,5 +9,7 @@
     <color name="loginTextColor">#fffefe</color>
     <color name="hintColor">#9a9a9a</color>
     <color name="editTextLineColor">#9a9a9a</color>
+    <color name="transparent">#00FFFFFF </color>
+    <color name="edittextdiable">#eaeaea</color>
 
 </resources>

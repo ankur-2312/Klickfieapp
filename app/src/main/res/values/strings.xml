@@ -20,6 +20,8 @@
     <string name="work_in_progress">Work In Progress</string>
     <string name="min_10_digits">Min 10 Digits are allowed</string>
     <string name="email_error">Enter Valid Email</string>
+    <string name="sharedPrefFileName">com.sharedPref.MyFile</string>
+    <string name="add_a_comment">Add a Comment</string>
 
     <string-array name="array_name">
         <item>+91</item>

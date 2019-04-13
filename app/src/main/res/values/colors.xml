@@ -11,5 +11,7 @@
     <color name="editTextLineColor">#9a9a9a</color>
     <color name="transparent">#00FFFFFF </color>
     <color name="edittextdiable">#eaeaea</color>
+    <color name="postLikeText">#b2b2b2</color>
+    <color name="verticalLineColor">#d8d8d8</color>
 
 </resources>

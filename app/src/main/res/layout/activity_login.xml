@@ -94,21 +94,47 @@
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
+      <!--<FrameLayout-->
+          <!--android:layout_width="match_parent"-->
+          <!--android:layout_height="wrap_content"-->
+          <!--android:layout_below="@id/linear1"-->
+          <!--android:layout_centerHorizontal="true"-->
+          <!--android:layout_marginStart="50dp"-->
+          <!--android:layout_marginTop="45dp"-->
+          <!--android:layout_marginEnd="50dp">-->
 
+          <!--<ProgressBar-->
+              <!--android:id="@+id/progressBarLogin"-->
+              <!--android:layout_width="wrap_content"-->
+              <!--android:layout_height="wrap_content"-->
+              <!--android:layout_gravity="center"-->
+              <!--android:visibility="invisible"-->
+             <!---->
+              <!--android:indeterminateDrawable="@drawable/progress_drawable"-->
+              <!--/>-->
 
         <Button
             android:id="@+id/butLogin"
             android:layout_width="match_parent"
             android:layout_height="55dp"
+            android:background="@drawable/rounded_button_disable"
+            android:enabled="false"
+            android:text="@string/login"
+            android:textColor="@color/buttonColor"
             android:layout_below="@id/linear1"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="45dp"
-            android:layout_marginEnd="50dp"
-            android:background="@drawable/rounded_button_disable"
-            android:enabled="false"
-            android:text="@string/login"
-            android:textColor="@color/buttonColor" />
+            android:layout_marginEnd="50dp"/>
+
+      <!--</FrameLayout>-->
+
+        <RelativeLayout
+            android:id="@+id/swipeParent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="-15dp">
 
         <ImageView
 
@@ -116,9 +142,8 @@
             android:id="@+id/ivSwipeLine"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-15dp"
 
+            android:layout_alignParentEnd="true"
             android:scaleType="fitXY"
             android:src="@drawable/ic_login_swipe_line"
             tools:ignore="ContentDescription" />
@@ -128,43 +153,48 @@
             android:id="@+id/framelayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="-15dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40dp"
             android:layout_alignParentEnd="true">
 
 
-            <!--<ImageView-->
+            <ImageView
 
 
-                <!--android:id="@+id/ivSwipeCurve"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
+                android:id="@+id/ivSwipeCurve"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
 
-                <!--android:src="@drawable/ic_login_swipe_curve"-->
-                <!--tools:ignore="ContentDescription" />-->
+                android:src="@drawable/ic_login_swipe_curve"
+                tools:ignore="ContentDescription" />
 
-            <!--<ImageView-->
+            <ImageView
 
-                <!--android:id="@+id/ivSwipeArrow"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:scaleType="fitXY"-->
-                <!--android:layout_gravity="center"-->
-                <!--android:src="@drawable/ic_login_swipe_arrow"-->
-                <!--tools:ignore="ContentDescription" />-->
+                android:id="@+id/ivSwipeArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_login_swipe_arrow"
+
+                tools:ignore="ContentDescription" />
 
 
         </FrameLayout>
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/tvNotRegistered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/loginText"
+            android:textColor="@color/swipeText"
+            android:textSize="14sp"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="40dp"
-            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="70dp"
+            android:text="@string/swipe_to_sign_up"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="70dp"
             android:maxLines="1"/>
 
 

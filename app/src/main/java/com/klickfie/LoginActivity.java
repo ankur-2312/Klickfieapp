@@ -15,10 +15,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.klickfie.utilities.*;
 import com.klickfie.utilities.LoginPojo;
+
 import java.util.Objects;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,6 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button butLogin;
     private TextInputEditText etPhoneNo;
     private TextView tvNotRegistered;
+    private ProgressBar progressBar;
+    private ImageView ivSwipeArrow;
 
 
     @Override
@@ -38,45 +45,61 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         initViews();
-        spannableString();
+        //spannableString();
     }
 
     private void initViews() {
+        ivSwipeArrow =findViewById(R.id.ivSwipeArrow);
         butLogin = findViewById(R.id.butLogin);
         etPhoneNo = findViewById(R.id.etPhoneNo);
         tvNotRegistered = findViewById(R.id.tvNotRegistered);
         butLogin.setOnClickListener(this);
         etPhoneNo.addTextChangedListener(this);
-
+        ivSwipeArrow.setOnClickListener(this);
+        // progressBar=findViewById(R.id.progressBarLogin);
     }
 
     @Override
     public void onClick(View v) {
 
+        switch (v.getId()) {
 
-        Call<LoginPojo> call = ApiInstance.getInstance().getApi().login(Constants.NORMAL_LOGIN, Constants.SOCIAL_TYPE, Constants.COUNTRY_CODE, Objects.requireNonNull(etPhoneNo.getText()).toString(), Constants.DEVICE_TYPE);
-        call.enqueue(new Callback<LoginPojo>() {
-            @Override
-            public void onResponse(Call<LoginPojo> call, Response<LoginPojo> response) {
+            case R.id.butLogin:
 
-                assert response.body() != null;
-                Log.i(Constants.Tag,""+response.body().getCODE());
-                if (response.body().getCODE() == Constants.LOGIN_SUCCESS) {
-                    Bundle bundle = new Bundle();
-                    bundle.putString(Constants.PHONE_NO_KEY, etPhoneNo.getText().toString());
-                    OTPFragment otpFragment = new OTPFragment();
-                    otpFragment.setArguments(bundle);
-                    otpFragment.show(getSupportFragmentManager(), otpFragment.getTag());
+
+            Call<LoginPojo> call = ApiInstance.getInstance().getApi().login(Constants.NORMAL_LOGIN, Constants.SOCIAL_TYPE, Constants.COUNTRY_CODE, Objects.requireNonNull(etPhoneNo.getText()).toString(), Constants.DEVICE_TYPE);
+            call.enqueue(new Callback<LoginPojo>() {
+                @Override
+                public void onResponse(Call<LoginPojo> call, Response<LoginPojo> response) {
+
+                    assert response.body() != null;
+
+                    if (response.body().getCODE() == Constants.LOGIN_SUCCESS) {
+                        Log.i(Constants.Tag, "Login Success");
+                        Bundle bundle = new Bundle();
+                        bundle.putString(Constants.PHONE_NO_KEY, etPhoneNo.getText().toString());
+                        OTPFragment otpFragment = new OTPFragment();
+                        otpFragment.setArguments(bundle);
+                        otpFragment.show(getSupportFragmentManager(), otpFragment.getTag());
+
+
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<LoginPojo> call, Throwable t) {
+                @Override
+                public void onFailure(Call<LoginPojo> call, Throwable t) {
 
-                Log.i(Constants.Tag, "" + t);
+                    Log.i(Constants.Tag, "" + t);
+                }
+            });
+            break;
 
-            }
-        });
+            case R.id.ivSwipeArrow:
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+                finish();
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out);
+                break;
+        }
     }
 
     @Override

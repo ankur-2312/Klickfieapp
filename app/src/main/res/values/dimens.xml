@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="splashLogoWidth">190dp</dimen>
-    <dimen name="splashLogoHeight" type="dimen" format="float">86.3dp</dimen>
-    <dimen name="loginLogoWidth" type="dimen" format="float">140.7dp</dimen>
-    <dimen name="loginLogoHeight" type="dimen" format="float">64.3dp</dimen>
-    <dimen name="loginLogoMarginTop" type="dimen" format="float">64.7dp</dimen>
-    <dimen name="loginTextSize" type="dimen" format="float">26.3sp</dimen>
+    <dimen name="splashLogoHeight" format="float" type="dimen">86.3dp</dimen>
+    <dimen name="loginLogoWidth" format="float" type="dimen">140.7dp</dimen>
+    <dimen name="loginLogoHeight" format="float" type="dimen">64.3dp</dimen>
+    <dimen name="loginLogoMarginTop" format="float" type="dimen">64.7dp</dimen>
+    <dimen name="loginTextSize" format="float" type="dimen">26.3sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

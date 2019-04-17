@@ -1,6 +1,10 @@
 package com.klickfie;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         butLogin.setOnClickListener(this);
         etPhoneNo.addTextChangedListener(this);
         ivSwipeArrow.setOnClickListener(this);
-        // progressBar=findViewById(R.id.progressBarLogin);
+        progressBar=findViewById(R.id.progressBarLogin);
     }
 
     @Override
@@ -66,8 +70,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.butLogin:
 
+                if(MyApplication.getContext().checkConnection())
+                {
 
-            Call<LoginPojo> call = ApiInstance.getInstance().getApi().login(Constants.NORMAL_LOGIN, Constants.SOCIAL_TYPE, Constants.COUNTRY_CODE, Objects.requireNonNull(etPhoneNo.getText()).toString(), Constants.DEVICE_TYPE);
+                    butLogin.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
+                    Call<LoginPojo> call = ApiInstance.getInstance().getApi().login(Constants.NORMAL_LOGIN, Constants.SOCIAL_TYPE, Constants.COUNTRY_CODE, Objects.requireNonNull(etPhoneNo.getText()).toString(), Constants.DEVICE_TYPE);
             call.enqueue(new Callback<LoginPojo>() {
                 @Override
                 public void onResponse(Call<LoginPojo> call, Response<LoginPojo> response) {
@@ -75,6 +83,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     assert response.body() != null;
 
                     if (response.body().getCODE() == Constants.LOGIN_SUCCESS) {
+                        butLogin.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.INVISIBLE);
                         Log.i(Constants.Tag, "Login Success");
                         Bundle bundle = new Bundle();
                         bundle.putString(Constants.PHONE_NO_KEY, etPhoneNo.getText().toString());
@@ -90,8 +100,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 public void onFailure(Call<LoginPojo> call, Throwable t) {
 
                     Log.i(Constants.Tag, "" + t);
+                    butLogin.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.INVISIBLE);
                 }
             });
+
+            }
+            else
+                {
+                    Snackbar.make(findViewById(android.R.id.content), R.string.internetCheck, Snackbar.LENGTH_LONG)
+                            .show();
+                }
             break;
 
             case R.id.ivSwipeArrow:
@@ -151,4 +170,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvNotRegistered.setText(spannableString);
         tvNotRegistered.setMovementMethod(LinkMovementMethod.getInstance());
     }
+
+
 }

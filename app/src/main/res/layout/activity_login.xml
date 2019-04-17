@@ -71,8 +71,8 @@
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="13dp"
-                android:entries="@array/array_name"
-                android:layout_marginEnd="10dp"/>
+                android:layout_marginEnd="10dp"
+                android:entries="@array/array_name" />
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/tilPhoneNo"
@@ -94,40 +94,35 @@
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
-      <!--<FrameLayout-->
-          <!--android:layout_width="match_parent"-->
-          <!--android:layout_height="wrap_content"-->
-          <!--android:layout_below="@id/linear1"-->
-          <!--android:layout_centerHorizontal="true"-->
-          <!--android:layout_marginStart="50dp"-->
-          <!--android:layout_marginTop="45dp"-->
-          <!--android:layout_marginEnd="50dp">-->
 
-          <!--<ProgressBar-->
-              <!--android:id="@+id/progressBarLogin"-->
-              <!--android:layout_width="wrap_content"-->
-              <!--android:layout_height="wrap_content"-->
-              <!--android:layout_gravity="center"-->
-              <!--android:visibility="invisible"-->
-             <!---->
-              <!--android:indeterminateDrawable="@drawable/progress_drawable"-->
-              <!--/>-->
-
-        <Button
-            android:id="@+id/butLogin"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@drawable/rounded_button_disable"
-            android:enabled="false"
-            android:text="@string/login"
-            android:textColor="@color/buttonColor"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linear1"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="50dp"
             android:layout_marginTop="45dp"
-            android:layout_marginEnd="50dp"/>
+            android:layout_marginEnd="50dp">
 
-      <!--</FrameLayout>-->
+            <ProgressBar
+                android:id="@+id/progressBarLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+
+
+            <Button
+                android:id="@+id/butLogin"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/rounded_button_disable"
+                android:enabled="false"
+                android:text="@string/login"
+                android:textColor="@color/buttonColor" />
+
+        </FrameLayout>
 
         <RelativeLayout
             android:id="@+id/swipeParent"
@@ -136,51 +131,51 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="-15dp">
 
-        <ImageView
-
-
-            android:id="@+id/ivSwipeLine"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-
-            android:layout_alignParentEnd="true"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_login_swipe_line"
-            tools:ignore="ContentDescription" />
-
-
-        <FrameLayout
-            android:id="@+id/framelayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true">
-
-
             <ImageView
 
 
-                android:id="@+id/ivSwipeCurve"
-                android:layout_width="match_parent"
+                android:id="@+id/ivSwipeLine"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
 
-                android:src="@drawable/ic_login_swipe_curve"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_login_swipe_line"
                 tools:ignore="ContentDescription" />
 
-            <ImageView
 
-                android:id="@+id/ivSwipeArrow"
+            <FrameLayout
+                android:id="@+id/framelayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/ic_login_swipe_arrow"
-
-                tools:ignore="ContentDescription" />
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true">
 
 
-        </FrameLayout>
+                <ImageView
+
+
+                    android:id="@+id/ivSwipeCurve"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/ic_login_swipe_curve"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+
+                    android:id="@+id/ivSwipeArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_login_swipe_arrow"
+
+                    tools:ignore="ContentDescription" />
+
+
+            </FrameLayout>
 
         </RelativeLayout>
 
@@ -188,14 +183,14 @@
             android:id="@+id/tvNotRegistered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/swipeText"
-            android:textSize="14sp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="70dp"
-            android:text="@string/swipe_to_sign_up"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginEnd="70dp"
-            android:maxLines="1"/>
+            android:layout_marginBottom="70dp"
+            android:maxLines="1"
+            android:text="@string/swipe_to_sign_up"
+            android:textColor="@color/swipeText"
+            android:textSize="14sp" />
 
 
     </RelativeLayout>

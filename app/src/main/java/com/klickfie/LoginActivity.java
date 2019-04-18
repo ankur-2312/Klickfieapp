@@ -1,9 +1,6 @@
 package com.klickfie;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -19,13 +16,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.klickfie.Model.LoginPojo;
+import com.klickfie.Retrofit.ApiInstance;
 import com.klickfie.utilities.*;
-import com.klickfie.utilities.LoginPojo;
 
 import java.util.Objects;
 

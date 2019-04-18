@@ -58,4 +58,6 @@
     <string name="notifications">Notifications</string>
     <string name="internetCheck">Please Check Your Internet Connection</string>
     <string name="_91">+91</string>
+    <string name="add_caption">Add Caption..</string>
+    <string name="upload">UPLOAD</string>
 </resources>

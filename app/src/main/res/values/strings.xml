@@ -60,4 +60,12 @@
     <string name="_91">+91</string>
     <string name="add_caption">Add Caption..</string>
     <string name="upload">UPLOAD</string>
+    <string name="comments">Comments</string>
+    <string name="commentNotAdded">Comment Not Added</string>
+    <string name="tagFriendToast">Tag @ to tag a friend in your Comment</string>
+    <string name="cancelWarning">If you go back,then all your progress will be lost.Do you wish to continue</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_post">Add Post</string>
+    <string name="staticImageURL">https://s3-ap-southeast-1.amazonaws.com/budfie/iOS/1549546322.png</string>
 </resources>

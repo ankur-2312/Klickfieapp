@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
-        <item name="colorAccent">@color/buttonColor</item>
+        <item name="colorAccent">@color/themeColor</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
@@ -16,7 +16,7 @@
 
     <style name="ErrorText" parent="TextAppearance.Design.Error">
         <item name="android:textSize">12.5sp</item>
-        <item name="android:textColor">@color/buttonColor</item>
+        <item name="android:textColor">@color/themeColor</item>
     </style>
 
 
@@ -37,6 +37,29 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Button" parent="Base.TextAppearance.AppCompat.Widget.Button">
+        <item name="android:background">@drawable/rounded_button_disable</item>
+        <item name="android:textColor">@color/themeColor</item>
+    </style>
+
+    <style name="TextInputEditText" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:maxLines">1</item>
+        <item name="android:background">@drawable/bottom_line</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+
+    </style>
+
+    <style name="editTextOTP" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textCursorDrawable">@color/themeColor</item>
+        <item name="android:background">@drawable/edittextdisable</item>
+
+    </style>
+
 
 
 </resources>

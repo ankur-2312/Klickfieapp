@@ -1,205 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
 
     <ImageView
         android:id="@+id/ivBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_login_bg"
         tools:ignore="ContentDescription" />
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/lgnLogoMT"
+        android:src="@drawable/ic_login_logo"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivLogo"
+        android:layout_marginStart="@dimen/lgnLgnTextMS"
+        android:layout_marginTop="@dimen/lgnLgnTextMt"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/login"
+        android:textColor="@color/loginText"
+        android:textSize="@dimen/lgnLgnTextTS" />
+
+    <TextView
+        android:id="@+id/tvLoginSubText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLoginText"
+        android:layout_marginStart="@dimen/lgnLgnSubTextMS"
+        android:layout_marginTop="@dimen/lgnLgnSubTextMT"
+        android:text="@string/with_your_phone_number"
+        android:textColor="@color/loginText"
+        android:textSize="@dimen/lgnLgnSubTextTS" />
+
+    <LinearLayout
+        android:id="@+id/parentPhoneNo"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvLoginSubText"
+        android:layout_marginStart="@dimen/lgnParPhnNoMS"
+        android:layout_marginTop="@dimen/lgnParPhnNoMT"
+        android:layout_marginEnd="@dimen/lgnParPhnNoME">
+
+        <include layout="@layout/phoneno_country_code" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/parentPhoneNo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/lgnParButLgnMS"
+        android:layout_marginTop="@dimen/lgnParLgnButMT"
+        android:layout_marginEnd="@dimen/lgnParLgnButME">
+
+        <ProgressBar
+            android:id="@+id/progressBarLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/butLogin"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/lgnLgnButH"
+            android:enabled="false"
+            android:text="@string/login" />
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/swipeParent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        tools:context=".LoginActivity">
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/lgnSwipeParME">
 
-
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:src="@drawable/ic_login_logo"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/tvLoginText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ivLogo"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/login"
-            android:textColor="@color/loginText"
-            android:textSize="@dimen/loginTextSize" />
-
-        <TextView
-            android:id="@+id/tvLoginSubText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvLoginText"
-            android:layout_marginStart="23.3dp"
-            android:layout_marginTop="17.3dp"
-            android:text="@string/with_your_phone_number"
-            android:textColor="@color/loginText"
-            android:textSize="14.3sp" />
-
-        <RelativeLayout
-            android:id="@+id/linear1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvLoginSubText"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="25dp">
-
-            <EditText
-                android:id="@+id/etCountryCode"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="19dp"
-                android:paddingBottom="10dp"
-                android:drawableStart="@drawable/ic_login_flag"
-                android:text="@string/_91"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:inputType="none"
-                android:focusable="false"
-                android:drawableEnd="@drawable/ic_login_code_arrow"
-                android:background="@drawable/bottom_line"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/tilPhoneNo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/etCountryCode"
-                app:hintTextAppearance="@style/HintText">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/etPhoneNo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bottom_line"
-                    android:hint="@string/phone_number"
-                    android:inputType="number"
-                    android:maxLength="10"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:maxLines="1" />
-            </android.support.design.widget.TextInputLayout>
-
-        </RelativeLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/linear1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="50dp">
-
-
-
-            <ProgressBar
-                android:id="@+id/progressBarLogin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="invisible" />
-
-
-            <Button
-                android:id="@+id/butLogin"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:background="@drawable/rounded_button_disable"
-                android:enabled="false"
-                android:text="@string/login"
-                android:textColor="@color/buttonColor" />
-
-        </FrameLayout>
-
-        <RelativeLayout
-            android:id="@+id/swipeParent"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-15dp">
-
-            <ImageView
-
-
-                android:id="@+id/ivSwipeLine"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:scaleType="fitXY"
-                android:src="@drawable/ic_login_swipe_line"
-                tools:ignore="ContentDescription" />
-
-
-            <FrameLayout
-                android:id="@+id/framelayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true">
-
-
-                <ImageView
-
-
-                    android:id="@+id/ivSwipeCurve"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:src="@drawable/ic_login_swipe_curve"
-                    tools:ignore="ContentDescription" />
-
-                <ImageView
-
-                    android:id="@+id/ivSwipeArrow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/ic_login_swipe_arrow"
-
-                    tools:ignore="ContentDescription" />
-
-
-            </FrameLayout>
-
-        </RelativeLayout>
-
-        <TextView
-            android:id="@+id/tvNotRegistered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="70dp"
-            android:layout_marginBottom="70dp"
-            android:maxLines="1"
-            android:text="@string/swipe_to_sign_up"
-            android:textColor="@color/swipeText"
-            android:textSize="14sp" />
-
+        <include layout="@layout/swipe" />
 
     </RelativeLayout>
-</FrameLayout>
+
+    <TextView
+        android:id="@+id/tvNotRegistered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/lgnSwipeTextME"
+        android:layout_marginBottom="@dimen/lgnSwipeTextMB"
+        android:maxLines="1"
+        android:text="@string/swipe_to_sign_up"
+        android:textColor="@color/swipeText"
+        android:textSize="14sp" />
+
+</RelativeLayout>

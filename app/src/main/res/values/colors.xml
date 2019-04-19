@@ -5,7 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="loginText">#283342</color>
-    <color name="buttonColor">#ff5c5c</color>
+    <color name="themeColor">#ff5c5c</color>
     <color name="loginTextColor">#fffefe</color>
     <color name="hintColor">#9a9a9a</color>
     <color name="editTextLineColor">#9a9a9a</color>
@@ -15,5 +15,6 @@
     <color name="verticalLineColor">#d8d8d8</color>
     <color name="swipeText">#8a8a8a</color>
     <color name="timerColor">#4a4a4a</color>
+    <color name="partialTransparent">#CCFF0000</color>
 
 </resources>

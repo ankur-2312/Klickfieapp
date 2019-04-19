@@ -19,11 +19,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".AddPostActivity"></activity>
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.CommentListActivity"/>
+        <activity
+            android:name=".Activity.HomeActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activity.AddPostActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activity.SignUpActivity"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Activity.MainActivity"
+            tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

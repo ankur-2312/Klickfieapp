@@ -38,4 +38,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'com.github.dmytrodanylyk:android-morphing-button:98a4986e56'
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
+    implementation 'androidx.exifinterface:exifinterface:1.1.0-alpha01'
 }

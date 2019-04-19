@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="splashLogoWidth">190dp</dimen>
-    <dimen name="splashLogoHeight" format="float" type="dimen">86.3dp</dimen>
-    <dimen name="loginLogoWidth" format="float" type="dimen">140.7dp</dimen>
-    <dimen name="loginLogoHeight" format="float" type="dimen">64.3dp</dimen>
-    <dimen name="loginLogoMarginTop" format="float" type="dimen">64.7dp</dimen>
-    <dimen name="loginTextSize" format="float" type="dimen">26.3sp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="fab_margin">16dp</dimen>
     <dimen name="lgnLogoMT">50dp</dimen>
     <dimen name="lgnLgnTextMt">30dp</dimen>
     <dimen name="lgnLgnTextMS">20dp</dimen>
@@ -123,4 +111,7 @@
     <dimen name="ivcPostTimeTS">12sp</dimen>
     <dimen name="ivcCommentMT">6dp</dimen>
     <dimen name="ivcCommentTS">13sp</dimen>
+    <dimen name="smivMS">20dp</dimen>
+    <dimen name="smivMT">25dp</dimen>
+    <dimen name="smFabMB">30dp</dimen>
 </resources>

@@ -29,14 +29,6 @@
         <item name="behavior_peekHeight">500dp</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Button" parent="Base.TextAppearance.AppCompat.Widget.Button">
         <item name="android:background">@drawable/rounded_button_disable</item>
@@ -57,6 +49,14 @@
         <item name="android:maxLength">1</item>
         <item name="android:textCursorDrawable">@color/themeColor</item>
         <item name="android:background">@drawable/edittextdisable</item>
+
+    </style>
+
+    <style name="SideMenuTextView" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+        <item name="android:layout_marginStart">60dp</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:textColor">@color/loginText</item>
+        <item name="android:textSize">15sp</item>
 
     </style>
 

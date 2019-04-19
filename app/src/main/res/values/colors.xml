@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="loginText">#283342</color>
     <color name="themeColor">#ff5c5c</color>
@@ -10,11 +7,10 @@
     <color name="hintColor">#9a9a9a</color>
     <color name="editTextLineColor">#9a9a9a</color>
     <color name="transparent">#00FFFFFF </color>
-    <color name="edittextdiable">#eaeaea</color>
+    <color name="edittextdisable">#eaeaea</color>
     <color name="postLikeText">#b2b2b2</color>
     <color name="verticalLineColor">#d8d8d8</color>
     <color name="swipeText">#8a8a8a</color>
     <color name="timerColor">#4a4a4a</color>
-    <color name="partialTransparent">#CCFF0000</color>
 
 </resources>

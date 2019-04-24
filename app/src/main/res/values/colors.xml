@@ -3,11 +3,10 @@
     <color name="white">#ffffff</color>
     <color name="loginText">#283342</color>
     <color name="themeColor">#ff5c5c</color>
-    <color name="loginTextColor">#fffefe</color>
     <color name="hintColor">#9a9a9a</color>
     <color name="editTextLineColor">#9a9a9a</color>
     <color name="transparent">#00FFFFFF </color>
-    <color name="edittextdisable">#eaeaea</color>
+    <color name="editTextDisable">#eaeaea</color>
     <color name="postLikeText">#b2b2b2</color>
     <color name="verticalLineColor">#d8d8d8</color>
     <color name="swipeText">#8a8a8a</color>

@@ -1,12 +1,11 @@
-<resources >
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Klickfie</string>
     <string name="login">Login</string>
     <string name="with_your_phone_number">with your Phone Number</string>
-    <string name="phone_number">Phone Number</string>
     <string name="name">Name<sup>*</sup></string>
     <string name="email">Email<sup>*</sup></string>
     <string name="phone_number_sub">Phone Number<sup>*</sup></string>
-    <string name="signup">SIGNUP</string>
+    <string name="signUp">SIGNUP</string>
     <string name="verify_phone_number">Verify Phone Number</string>
     <string name="we_have_sent_you_an_access_code_via_sms_for_phone_number_verification">We have sent you an access code via SMS for Phone Number Verification</string>
     <string name="resend_otp">Resend OTP</string>
@@ -14,8 +13,6 @@
     <string name="alreadyregistered">No is Already Registered</string>
     <string name="terms_conditions">By proceeding, you agree to our Terms and Conditions</string>
     <string name="work_in_progress">Work In Progress</string>
-    <string name="min_10_digits">Min 10 Digits are allowed</string>
-    <string name="email_error">Enter Valid Email</string>
     <string name="sharedPrefFileName">com.sharedPref.MyFile</string>
     <string name="add_a_comment">Add a Comment</string>
     <string name="view_all_comments">View all %s Comments</string>
@@ -54,4 +51,15 @@
     <string name="staticImageURL">https://s3-ap-southeast-1.amazonaws.com/budfie/iOS/1549546322.png</string>
     <string name="Comments">Comments</string>
     <string name="addPost">Add Post</string>
+    <string name="emailRegex" tools:ignore="TypographyDashes">^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$</string>
+    <string name="please_enter_name">Please Enter Name</string>
+    <string name="please_enter_name_starting_with_alphabets_to_continue">Please enter valid name starting with alphabets to continue</string>
+    <string name="please_enter_email">Please enter email</string>
+    <string name="please_enter_valid_email">Please enter valid email</string>
+    <string name="please_enter_phone_no">Please enter phone no</string>
+    <string name="please_enter_valid_phone_no">Please enter valid phone no</string>
+    <string name="write_a_comment">Write a Comment…</string>
+    <string name="deleteWarning">Do you want to Delete This Post</string>
+    <string name="server_error">Server Error</string>
+    <string name="delete_warning">You can not delete this post</string>
 </resources>

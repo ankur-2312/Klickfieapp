@@ -56,7 +56,7 @@
         android:layout_marginTop="@dimen/lgnParPhnNoMT"
         android:layout_marginEnd="@dimen/lgnParPhnNoME">
 
-        <include layout="@layout/phoneno_country_code" />
+        <include layout="@layout/phone_no_country_code" />
 
     </LinearLayout>
 
@@ -78,11 +78,10 @@
 
         <Button
             android:id="@+id/butLogin"
-            style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/lgnLgnButH"
-            android:enabled="false"
-            android:text="@string/login" />
+            android:text="@string/login"
+            style="@style/Button"/>
 
     </FrameLayout>
 

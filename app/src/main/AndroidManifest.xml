@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".utilities.MyApplication"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,23 +19,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".Activity.CommentListActivity"
+        <activity android:name=".activity.CommentListActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.HomeActivity"
+            android:name=".activity.HomeActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.AddPostActivity"
+            android:name=".activity.AddPostActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.LoginActivity"
+            android:name=".activity.LoginActivity"
             tools:ignore="InnerclassSeparator"
             />
         <activity
-            android:name=".Activity.SignUpActivity"
+            android:name=".activity.SignUpActivity"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,7 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.BaseActivity"
+        <activity android:name=".activity.BaseActivity"
             tools:ignore="InnerclassSeparator" />
 
         <provider
